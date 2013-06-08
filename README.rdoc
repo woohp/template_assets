@@ -1,0 +1,8 @@
+= template-assets
+
+Create the folder app/assets/templates/, put all your templates in there.
+In your view, use the template_assets helper to render all your templates.
+
+The id of the template is the path relative to app/assets/templates, without
+any file extensions. For example, the id for
+app/assets/templates/books/show.html.erb is books/show
