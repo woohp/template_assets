@@ -34,4 +34,6 @@ Dummy::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  config.template_assets.cache = false
 end

@@ -1,7 +1,7 @@
 module TemplateAssets
   module ViewHelpers
     def template_assets
-      if Rails.cache.exist? '_asset_templates'
+      if Rails.application.config.template_assets.cache and Rails.cache.exist? '_asset_templates'
         return Rails.cache.read '_asset_templates'
       end
 
@@ -28,7 +28,9 @@ module TemplateAssets
       output = safe_join(results)
 
       # cache
-      Rails.cache.write '_assets_templates', output
+      if Rails.application.config.template_assets.cache
+        Rails.cache.write '_assets_templates', output
+      end
 
       return output
     end
