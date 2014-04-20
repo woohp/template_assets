@@ -36,4 +36,6 @@ Dummy::Application.configure do
   config.assets.debug = true
 
   config.template_assets.cache = false
+
+  config.eager_load = false
 end
